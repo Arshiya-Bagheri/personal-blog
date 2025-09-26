@@ -1,8 +1,27 @@
 {% extends "blog/base.html" %}
-
+{% load static %}
 {% block content %}
-    <h1>0 Blogs.</h1>
-    <div class="blogs-list">
-        
-    </div>
+<link rel="stylesheet" href="{% static 'blog/blogs.css' %}">
+<h1 class="page-title">{{ blogs.count }} Blogs</h1>
+
+<div class="blogs-list">
+    {% for blog in blogs %}
+        <div class="blog-card">
+            <h2 class="blog-title">{{ blog.title }}</h2>
+            
+            <p class="blog-meta">
+                Created: {{ blog.created_at|date:"M d, Y, H:i" }}
+                {% if blog.updated_at and blog.updated_at != blog.created_at %}
+                    | Updated: {{ blog.updated_at|date:"M d, Y, H:i" }}
+                {% endif %}
+            </p>
+            
+            <p class="blog-excerpt">{{ blog.content|truncatewords:30 }}</p>
+            
+            {% comment %} <a href="{% url 'blog_detail' blog.id %}" class="read-more">Read More</a> {% endcomment %}
+        </div>
+    {% empty %}
+        <p>No blogs available.</p>
+    {% endfor %}
+</div>
 {% endblock %}

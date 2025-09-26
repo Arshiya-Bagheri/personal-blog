@@ -1,6 +1,17 @@
 {% extends "blog/base.html" %}
-
+{% load static %}
 {% block content %}
-    <h2>About</h2>
-    <p>Welcome to the about section!</p>
+<link rel="stylesheet" href="{% static 'blog/about.css' %}">
+    <div class="about-card">
+        <h1>About Me & This Blog</h1>
+        <p>
+            Hi, I’m Arshiya 👋 — a curious learner who’s passionate about programming, technology, and building things from scratch.  
+            I created this blog as a space to document my journey in software development, share what I learn along the way, and post about the projects I’m working on.  
+        </p>
+        <p>
+            My goal is simple: to improve as a developer while creating something useful, and maybe inspire or help others who are on the same path.  
+            Expect posts about coding, experiments, ideas, and anything that excites me as I grow. 🚀
+        </p>
+    </div>
+
 {% endblock %}

@@ -1,6 +1,42 @@
 {% extends "blog/base.html" %}
-
+{% load static %}
 {% block content %}
-    <h2>Search</h2>
-    <p>Welcome to the search section!</p>
+<link rel="stylesheet" href="{% static 'blog/search.css' %}">
+
+    <div class="search-container">
+        <h2>Search Blogs</h2>
+        <form method="GET" action="{% url 'search' %}" class="search-form">
+            <input type="text" name="title" class="search-input" placeholder="Search blogs by title..." value="{{ request.GET.title }}">
+            <input type="date" name="created" class="search-input" value="{{ request.GET.created }}">
+            <input type="date" name="updated" class="search-input" value="{{ request.GET.updated }}">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+    
+    {% if results %}
+        <div class="results">
+            <h3>{{ results.count }} Results:</h3>
+            <div class="blogs-list">
+                {% for blog in results %}
+                    <div class="blog-card">
+                        <h2 class="blog-title">{{ blog.title }}</h2>
+                        
+                        <p class="blog-meta">
+                            Created: {{ blog.created_at|date:"M d, Y, H:i" }}
+                            {% if blog.updated_at and blog.updated_at != blog.created_at %}
+                                | Updated: {{ blog.updated_at|date:"M d, Y, H:i" }}
+                            {% endif %}
+                        </p>
+                        
+                        <p class="blog-excerpt">{{ blog.content|truncatewords:30 }}</p>
+                        
+                        {% comment %} <a href="{% url 'blog_detail' blog.id %}" class="read-more">Read More</a> {% endcomment %}
+                    </div>
+                {% empty %}
+                    <p>No results found.</p>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
 {% endblock %}
