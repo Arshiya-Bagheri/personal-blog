@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog</title>
+    <link rel="stylesheet" href="{% static 'blog/base.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="blog-title">Personal Blog</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'blogs' %}" class="nav-button {% if request.resolver_match.url_name == 'blogs' %}active{% endif %}">Blogs</a></li>
+                    <li><a href="{% url 'search' %}" class="nav-button {% if request.resolver_match.url_name == 'search' %}active{% endif %}">Search</a></li>
+                    <li><a href="{% url 'about' %}" class="nav-button {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>
