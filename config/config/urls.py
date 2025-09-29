@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', lambda request: redirect('blogs')),
     path('blogs/', blogs, name='blogs'),
+    path('blog/<int:id>/', blog_detail, name='blog_detail'),
     path('search/', search, name='search'),
     path('about/', about, name='about'),
     path('add_blog/', add_blog, name='add_blog'),

@@ -18,7 +18,7 @@
             
             <p class="blog-excerpt">{{ blog.content|truncatewords:30 }}</p>
             
-            {% comment %} <a href="{% url 'blog_detail' blog.id %}" class="read-more">Read More</a> {% endcomment %}
+            <a href="{% url 'blog_detail' blog.id %}" class="read-more">Read More</a>
         </div>
     {% empty %}
         <p>No blogs available.</p>

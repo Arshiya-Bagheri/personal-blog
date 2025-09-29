@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from .models import Blogs
 from django.contrib.auth.decorators import user_passes_test
+from django.shortcuts import render, get_object_or_404
 # USERNAME: arshiya
 # PASS: 01arshiya01
+
 def superuser_required(view_func):
     decorator = user_passes_test(lambda u: u.is_superuser)
     return decorator(view_func)
@@ -13,6 +15,10 @@ def base(request):
 def blogs(request):
     blogs = Blogs.objects.all().order_by('created_at')
     return render(request, 'blog/blogs.html', {'blogs': blogs})
+
+def blog_detail(request, id):
+    blog = get_object_or_404(Blogs, id=id)
+    return render(request, 'blog/blog_detail.html', {'blog': blog})
 
 def search(request):
     title_query = request.GET.get('title', '')
