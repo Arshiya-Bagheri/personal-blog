@@ -8,6 +8,14 @@
     text-align: center;
 }
 
+/* Add side margin/padding on small screens */
+@media (max-width: 900px) {
+    .about-card {
+        margin: 20px 15px; /* top/bottom 20px, left/right 15px */
+        padding: 20px;     /* shrink padding so it fits better */
+    }
+}
+
 .about-card h1 {
     font-size: 2rem;
     margin-bottom: 20px;
