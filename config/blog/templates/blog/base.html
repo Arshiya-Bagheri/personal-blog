@@ -14,11 +14,11 @@
             <h1 class="blog-title">Personal Blog</h1>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="{% url 'blogs' %}" class="nav-button {% if request.resolver_match.url_name == 'blogs' %}active{% endif %}">Blogs</a></li>
+                    <li><a href="{% url 'blogs' %}" class="nav-button {% if request.resolver_match.url_name == 'blogs' or request.resolver_match.url_name == 'blog_detail'%}active{% endif %}">Blogs</a></li>
                     <li><a href="{% url 'search' %}" class="nav-button {% if request.resolver_match.url_name == 'search' %}active{% endif %}">Search</a></li>
                     {% if request.user.is_superuser %}
                         <li><a href="{% url 'add_blog' %}" class="nav-button {% if request.resolver_match.url_name == 'add_blog' %}active{% endif %}">Add</a></li>
-                        <li><a href="{% url 'update_dashboard' %}" class="nav-button {% if request.resolver_match.url_name == 'update_blogs' %}active{% endif %}">Update</a></li>
+                        <li><a href="{% url 'update_dashboard' %}" class="nav-button {% if request.resolver_match.url_name == 'update_blogs' or request.resolver_match.url_name == 'update_dashboard'%}active{% endif %}">Update</a></li>
                     {% endif %}
                     <li><a href="{% url 'about' %}" class="nav-button {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
                 </ul>
