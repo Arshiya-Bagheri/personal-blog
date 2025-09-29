@@ -116,3 +116,23 @@
     color: #555;
     margin-bottom: 15px;
 }
+
+.blog-buttons {
+    display: flex;
+    gap: 10px;  /* space between buttons */
+    margin-top: auto;  /* aligns buttons at bottom of card */
+}
+
+.edit-button {
+    display: inline-block;
+    background: #f39c12;  /* orange */
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.edit-button:hover {
+    background: #e67e22;
+}

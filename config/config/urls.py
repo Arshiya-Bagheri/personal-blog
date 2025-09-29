@@ -27,5 +27,6 @@ urlpatterns = [
     path('search/', search, name='search'),
     path('about/', about, name='about'),
     path('add_blog/', add_blog, name='add_blog'),
-    path('update_blogs/', update_blogs, name='update_blogs'),
+    path('update_dashboard/', update_dashboard, name='update_dashboard'),
+    path('blog/update/<int:id>/', update_blogs, name='update_blogs'),
 ]

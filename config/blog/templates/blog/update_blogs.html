@@ -1,6 +1,17 @@
 {% extends "blog/base.html" %}
 {% load static %}
-
 {% block content %}
-    <h2>Update Blog</h2>
+<link rel="stylesheet" href="{% static 'blog/update_blog.css' %}">
+
+<div class="update-blog-container">
+    <h1>Update Blog</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="title" id="title" value="{{ blog.title }}" placeholder="Enter the blog title" required>
+        <textarea name="content" id="content" rows="10" placeholder="Write your content here..." required>{{ blog.content }}</textarea>
+
+        <button type="submit">Update Blog</button>
+    </form>
+</div>
+
 {% endblock %}

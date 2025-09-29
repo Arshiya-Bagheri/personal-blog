@@ -1,0 +1,43 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'blog/update_dashboard.css' %}">
+
+<h1 class="page-title">Manage Blogs</h1>
+
+{% if blogs %}
+<table class="blogs-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for blog in blogs %}
+        <tr>
+            <td>{{ blog.id }}</td>
+            <td>{{ blog.title }}</td>
+            <td>{{ blog.created_at|date:"M d, Y, H:i" }}</td>
+            <td>
+                {% if blog.updated_at and blog.updated_at != blog.created_at %}
+                    {{ blog.updated_at|date:"M d, Y, H:i" }}
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+            <td>
+                <a href="{% url 'update_blogs' blog.id %}" class="edit-btn">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No blogs available.</p>
+{% endif %}
+
+{% endblock %}

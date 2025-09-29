@@ -1,0 +1,79 @@
+/* Update Blog Page Container */
+.update-blog-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Page title */
+.update-blog-container h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #222;
+}
+
+/* Labels */
+.update-blog-container label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Input fields */
+.update-blog-container input[type="text"],
+.update-blog-container textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: vertical; /* allows vertical resize only */
+}
+
+/* Auto-growing textarea (basic CSS-only) */
+.update-blog-container textarea {
+    min-height: 150px;
+    max-height: 80vh;
+    overflow: hidden;
+}
+
+/* Submit button */
+.update-blog-container button {
+    display: inline-block;
+    background: #00b894;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.update-blog-container button:hover {
+    background: #019270;
+}
+.update-blog-container form {
+    text-align: center;  /* centers inline or inline-block children */
+}
+
+.update-blog-container button {
+    display: inline-block; /* already inline-block, keeps width as content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .update-blog-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+}

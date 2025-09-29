@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Blogs
 from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render, get_object_or_404
+from django.utils import timezone
 # USERNAME: arshiya
 # PASS: 01arshiya01
 
@@ -57,5 +58,23 @@ def add_blog(request):
     return render(request, 'blog/add_blog.html')
 
 @superuser_required
-def update_blogs(request):
-    return render(request, 'blog/update_blogs.html')
+def update_blogs(request, id):
+    blog = get_object_or_404(Blogs, id=id)
+
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+
+        blog.title = title
+        blog.content = content
+        blog.updated_at = timezone.now()  # only update here
+        blog.save()
+
+        return redirect('blogs')
+
+    return render(request, 'blog/update_blogs.html', {'blog': blog})
+
+@superuser_required
+def update_dashboard(request):
+    blogs = Blogs.objects.all().order_by('created_at')  # newest first
+    return render(request, 'blog/update_dashboard.html', {'blogs': blogs})
