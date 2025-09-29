@@ -39,6 +39,17 @@
     border-color: #00b894; /* green accent */
     outline: none;
 }
+.blog-content-textarea {
+    width: 100%;
+    min-height: 150px;   /* starting height */
+    max-height: 80vh;    /* prevent it from taking too much screen */
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;    /* admin can manually drag to resize */
+    overflow: hidden;    /* hide scrollbars initially */
+}
 
 /* Search button styled like blog "Read More" button */
 .add-button {
