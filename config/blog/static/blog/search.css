@@ -1,13 +1,14 @@
 /* Centered search container styled like a blog card */
 .search-container {
     max-width: 700px;
-    width: 100%;
+    width: calc(100% - 30px); /* leave 15px each side */
     margin: 40px auto;
     padding: 30px;
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center; /* center form elements */
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .search-container h2 {
@@ -129,4 +130,15 @@
 
 .blog-card .read-more:hover {
     background: #019270;
+}
+
+@media (max-width: 768px) {
+    .search-container {
+        margin: 20px 15px; /* top/bottom 20px, left/right 15px */
+        padding: 20px;     /* reduce padding on small screens */
+    }
+
+    .search-input {
+        width: 100%; /* make inputs full width inside container */
+    }
 }
