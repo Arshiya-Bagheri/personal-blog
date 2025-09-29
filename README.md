@@ -66,9 +66,9 @@ Follow these steps to run the project locally:
    - This account lets you access the Django admin panel at /admin/.  
 
 11. Run the development server:
-    ```
+```
    python manage.py runserver  
-    ```
+```
 13. Open the app: 
 ```
    Visit http://127.0.0.1:8000/  
@@ -123,7 +123,7 @@ See the [LICENSE](LICENSE) file for full details.
   ![Searchpage](screenshots/search.png)
   ![Aboutpage](screenshots/about.png)
 
-- What admin see 
+- What admin sees 
   ![Admin](screenshots/admin_blogs.png)
   ![Admin](screenshots/admin_add.png)
   ![Admin](screenshots/admin_update_blog.png)
