@@ -40,6 +40,14 @@ def about(request):
 
 @superuser_required
 def add_blog(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        if title and content:
+            Blogs.objects.create(title=title, content=content)
+            return render(request, 'blog/add_blog.html', {'success': True})
+        else:
+            return render(request, 'blog/add_blog.html', {'error': 'Both title and content are required.'})
     return render(request, 'blog/add_blog.html')
 
 @superuser_required

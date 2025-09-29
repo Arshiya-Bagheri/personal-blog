@@ -1,0 +1,72 @@
+/* Centered search container styled like a blog card */
+.add-blog-container {
+    max-width: 700px;
+    width: calc(100% - 30px); /* leave 15px each side */
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.add-blog-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+}
+
+/* Form layout */
+.add-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Inputs */
+.add-input {
+    width: 80%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.add-input:focus {
+    border-color: #00b894; /* green accent */
+    outline: none;
+}
+
+/* Search button styled like blog "Read More" button */
+.add-button {
+    display: inline-block;
+    background: #00b894;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.add-button:hover {
+    background: #019270;
+}
+
+
+@media (max-width: 768px) {
+    .add-blog-container {
+        margin: 20px 15px; /* top/bottom 20px, left/right 15px */
+        padding: 20px;     /* reduce padding on small screens */
+    }
+
+    .add-input {
+        width: 100%; /* make inputs full width inside container */
+    }
+}

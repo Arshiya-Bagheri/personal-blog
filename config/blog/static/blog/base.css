@@ -64,7 +64,6 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -72,11 +71,14 @@ header {
     }
 
     .nav-links {
-        margin-top: 1rem;
+        flex-direction: column; /* stack buttons */
+        width: 100%;
     }
 
     .nav-button {
-        margin: 0 0.5rem;
+        margin: 0.3rem 0; /* space between stacked buttons */
+        width: 100%;      /* full width for touch-friendly */
     }
 }
+
 
