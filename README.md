@@ -14,22 +14,6 @@ This project idea comes from roadmap.sh, a great resource for developers.
 
 ---
 
-## 📸 Screenshots
-
-- What users see 
-  ![Blogspage](screenshots/blogs.png)
-  ![Searchpage](screenshots/search.png)
-  ![Aboutpage](screenshots/about.png)
-
-- What admin see 
-  ![Admin](screenshots/admin_blogs.png)
-  ![Admin](screenshots/admin_add.png)
-  ![Admin](screenshots/admin_update_blog.png)
-  ![Admin](screenshots/admin_update_dashboard.png)
-  ![Admin](screenshots/read_more.png)
-
----
-
 ## 🛠️ Tech Stack
 
 - Python (3.10+ recommended)  
@@ -42,45 +26,53 @@ This project idea comes from roadmap.sh, a great resource for developers.
 ## 📦 Requirements
 
 This project uses the following dependencies:
-
+```
 Django>=5.0,<6.0  
-
+```
 To install all dependencies:
-
+```
 pip install -r requirements.txt  
-
+```
 ---
 
 ## ⚙️ Installation & Setup
 
 Follow these steps to run the project locally:
 
-1. Clone the repository:  
+1. Clone the repository:
+   ```
    git clone https://github.com/Arshiya-Bagheri/personal-blog.git  
    cd config
-
-2. Create a virtual environment (recommended):  
+   ```
+3. Create a virtual environment (recommended):
+   ``` 
    python -m venv venv  
    source venv/bin/activate   # Linux/Mac  
    venv\Scripts\activate      # Windows  
-
-3. Install dependencies:  
+   ```
+5. Install dependencies:
+   ```
    pip install -r requirements.txt  
-
-4. Run migrations:  
+   ```
+7. Run migrations:
+   ```
    python manage.py migrate  
-
-5. Create a superuser:  
-   python manage.py createsuperuser  
+   ```
+9. Create a superuser:
+    ```
+   python manage.py createsuperuser
+    ```
    - Enter a username, email (optional), and password.  
    - This account lets you access the Django admin panel at /admin/.  
 
-6. Run the development server:  
+11. Run the development server:
+    ```
    python manage.py runserver  
-
-7. Open the app:  
+    ```
+13. Open the app: 
+```
    Visit http://127.0.0.1:8000/  
-
+```
 ---
 
 ## 📖 Usage
@@ -120,3 +112,20 @@ This project is licensed under the **GNU General Public License v3.0 (GPLv3)**.
 You are free to use, modify, and distribute this software, but any derivative work **must also be open-sourced under the GPLv3 license**.
 
 See the [LICENSE](LICENSE) file for full details.
+
+
+---
+
+## 📸 Screenshots
+
+- What users see 
+  ![Blogspage](screenshots/blogs.png)
+  ![Searchpage](screenshots/search.png)
+  ![Aboutpage](screenshots/about.png)
+
+- What admin see 
+  ![Admin](screenshots/admin_blogs.png)
+  ![Admin](screenshots/admin_add.png)
+  ![Admin](screenshots/admin_update_blog.png)
+  ![Admin](screenshots/admin_update_dashboard.png)
+  ![Admin](screenshots/read_more.png)
