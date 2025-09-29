@@ -13,15 +13,20 @@ def search(request):
     created_query = request.GET.get("created", "")
     updated_query = request.GET.get("updated", "")
 
-    results = Blogs.objects.all()
-    
-    if title_query:
-        results = results.filter(title__icontains=title_query)
-    if created_query:
-        results = results.filter(created_at__date=created_query)
-    if updated_query:
-        results = results.filter(updated_at__date=updated_query)
+    results = None  # default: nothing shown
 
+    # Run filters only if user provided at least one search term
+    if title_query or created_query or updated_query:
+        results = Blogs.objects.all()
+
+        if title_query:
+            results = results.filter(title__icontains=title_query)
+
+        if created_query:
+            results = results.filter(created_at__date=created_query)
+
+        if updated_query:
+            results = results.filter(updated_at__date=updated_query)
     return render(request, 'blog/search.html', {'results': results})
 
 def about(request):
