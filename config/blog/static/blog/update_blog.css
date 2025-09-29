@@ -77,3 +77,10 @@
         margin: 20px auto;
     }
 }
+
+@media (max-width: 600px) {
+    .update-blog-container {
+        margin: 10px;   /* add side space even on small screens */
+        padding: 1rem;
+    }
+}

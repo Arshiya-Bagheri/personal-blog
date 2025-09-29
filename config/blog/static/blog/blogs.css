@@ -81,6 +81,15 @@
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Make sure it scales well on mobile */
+@media (max-width: 600px) {
+    .blog-detail-container {
+        margin: 10px;   /* add side space even on small screens */
+        padding: 1rem;
+    }
 }
 
 .blog-full-content {
@@ -136,3 +145,4 @@
 .edit-button:hover {
     background: #e67e22;
 }
+
