@@ -1,11 +1,7 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, , get_object_or_404
 from .models import Blogs
 from django.contrib.auth.decorators import user_passes_test
-from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-
-# USERNAME: arshiya
-# PASS: 01arshiya01
 
 def superuser_required(view_func):
     decorator = user_passes_test(lambda u: u.is_superuser)
@@ -77,5 +73,5 @@ def update_blogs(request, id):
 
 @superuser_required
 def update_dashboard(request):
-    blogs = Blogs.objects.all().order_by('created_at')  # newest first
+    blogs = Blogs.objects.all().order_by('created_at')  
     return render(request, 'blog/update_dashboard.html', {'blogs': blogs})
